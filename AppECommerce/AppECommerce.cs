@@ -1,7 +1,8 @@
-﻿using System.ComponentModel;
-using System;
+﻿using System;
 using UserSDK;
 using StockSDK;
+using BillSDK;
+
 using System.Collections.Generic;
 
 namespace AppECommerce
@@ -13,7 +14,8 @@ namespace AppECommerce
             User user = AuthenticateUser();
             Console.WriteLine($"Bienvenue {user.FirstName} {user.LastName}\n");
             List<ItemLine> cart = ManageShoppingCart(user);
-            Console.WriteLine("You have to pay!");
+            Bill bill = Bill.CreateBill(user, cart);
+            Console.WriteLine(bill);
         }
         private static User AuthenticateUser()
         {
