@@ -10,13 +10,17 @@ namespace UserManager
 {
     class UserManager
     {
-        public List<User> users;
+        private List<User> users;
 
         public UserManager()
         {
             users = new List<User>();
             users.Add(new User("ln", "fn", "em", "un"));
             users.Add(new User("aa", "bb", "cc", "dd"));
+        }
+        public void LoadUsers(string filename)
+        {
+            // TODO: Load users from jsonfile
         }
         public User GetUser(string username)
         {

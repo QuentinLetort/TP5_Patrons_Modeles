@@ -12,5 +12,9 @@ namespace StockSDK
             this.Name = name;
             this.UnitPrice = unitPrice;
         }
+        public override string ToString()
+        {
+            return $"{Name}, {UnitPrice}";
+        }
     }
 }
